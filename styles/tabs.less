@@ -1,0 +1,224 @@
+@tab-radius: 3px;
+@modified-icon-width: 8px;
+@tab-skew: 30deg;
+@tab-top-padding: 5px;
+@tab-bottom-border-height: 5px;
+@tab-border: 1px solid @tab-border-color;
+@tab-bar-bottom-border-color: #111;
+
+.tab-bar {
+    height: fit-content !important;
+    background: @tab-bar-background-color;
+    box-shadow: inset 0 -8px 8px -4px rgba(0,0,0, .15);
+    // padding: 0 10px 0 25px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    [is="tabs-tab"] {
+        position: relative;
+        top: @tab-top-padding;
+        max-width: max-content !important;
+        min-width: 11rem !important;
+        height: fit-content !important;
+        padding: 0;
+        margin: 0 20px 0 5px;
+        color: @text-color;
+        transition: color 0.1s ease-in;
+        border: none;
+        // use this for scaling the whole tab section
+        font-size: 0.9rem;
+
+        .close-icon {
+            right: 0;
+            z-index: 3;
+            text-align: right;
+            color: @text-color;
+
+            &:hover {
+                color: inherit;
+            }
+        }
+
+        &.modified:hover .close-icon:hover {
+            color: @text-color-highlight;
+        }
+
+        // a workaround for .title
+        div:not([class="close-icon"]) {
+            position: relative;
+            z-index: 1;
+            margin-top: -@tab-top-padding;
+            padding-top: @tab-top-padding;
+            padding-right: 10px;
+
+            height: var(--ui-tab-size);
+            display: flex;
+            align-items: center;
+            align-content: center;
+            font-size: calc(~"var(--ui-tab-size) * 0.265");
+            --side-padding: 1.5em;
+            margin-right: var(--side-padding);
+            margin-left: calc(~"var(--side-padding) - 0.47rem");
+            // icon
+            &:before {
+                transform: scale(1.2) translateX(10%) translateY(6%) !important;
+                margin-top: 0 !important;
+            }
+        }
+    }
+
+    .tab.active {
+        z-index: 1;
+        color: @text-color-highlight;
+        box-shadow: inset -1px 1px 0 @tab-border-color, 4px -4px 4px rgba(0,0,0,.1);
+
+        .close-icon {
+            color: @text-color;
+        }
+    }
+
+    .tab:hover {
+        color: @text-color-highlight;
+    }
+
+    .tab.active:hover .close-icon {
+        color: @text-color;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+}
+// border
+.tab-bar + .item-views::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    height: @tab-bottom-border-height;
+    left: 0;
+    right: 0;
+    background-color: @tab-background-color-active;
+    border-top: 1px solid @tab-border-color;
+    border-bottom: 1px solid @tab-bar-bottom-border-color;
+    pointer-events: none;
+}
+//
+//
+// XD Tab code
+//
+//
+//
+// make tabs larger
+//
+
+// atom-pane {
+//     .list-inline.tab-bar.inset-panel {
+//         height: fit-content;
+//
+//         .tab {
+//             height: fit-content;
+//             // use this for scaling the whole tab section
+//             font-size: 0.9rem;
+//             // display: flex;
+//             div.title {
+//                 height: 4.1em;
+//                 display: flex;
+//                 align-items: center;
+//                 align-content: center;
+//                 font-size: 1.20em;
+//                 --side-padding: 2em;
+//                 margin-right: var(--side-padding);
+//                 margin-left: calc(~"var(--side-padding) - 0.47rem");
+//                 // icon
+//                 &::before {
+//                     transform: scale(1.2) translateX(10%) translateY(6%);
+//                     margin-top: 0;
+//                 }
+//             }
+//         }
+//     }
+// }
+//
+// active tab underline
+//
+
+atom-pane-container {
+    .list-inline.tab-bar.inset-panel {
+        z-index: 1;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3) !important;
+        background-color: @navy-slate !important;
+
+        *[is="tabs-tab"] {
+            background-color: @navy-slate !important;
+            color: @very-light-gray;
+            border: none !important;
+            transition: border 0.15s ease 0s, color 0.15s ease 0s !important;
+            // disable default outline
+            &::before {
+                display: none !important;
+            }
+            --size-of-underline: 4px;
+            border-bottom: var(--size-of-underline) solid white !important;
+
+            &.active {
+                background-color: @navy-slate !important;
+                color: white;
+                opacity: 1;
+                z-index: 9;
+                // shadow behind active tab
+                box-shadow: var(--shadow-2);
+            }
+
+            &:not(.active) {
+                box-shadow: none !important;
+                border-bottom-color: transparent !important;
+            }
+        }
+    }
+}
+// side bar
+
+atom-panel-container {
+    .list-inline.tab-bar.inset-panel {
+        // remove the black line
+        box-shadow: none !important;
+        background-color: @alt-tab-color !important;
+
+        *[is="tabs-tab"] {
+            background-color: @alt-tab-color !important;
+            color: @very-light-gray;
+            border: none !important;
+            transition: border 0.3s ease 0s !important;
+            // disable default outline
+            &::before {
+                display: none !important;
+            }
+            --size-of-underline: 4px;
+
+            &.active {
+                background-color: @alt-tab-color !important;
+                color: white;
+                opacity: 1;
+                z-index: 9;
+                // shadow behind active tab
+                box-shadow: var(--shadow-2);
+                border-bottom: var(--size-of-underline) solid white !important;
+            }
+
+            &:not(.active) {
+                // keep the size of non-active tabs the same as the
+                // tab that is acive
+                padding-bottom: var(--size-of-underline);
+            }
+        }
+    }
+}
+// tabs in side bar
+
+atom-panel-container .tab-bar *[is="tabs-tab"] {
+    background-color: var(--ui--background--raised) !important;
+}

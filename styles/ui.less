@@ -1,0 +1,126 @@
+@import "syntax";
+.tab-bar .tab:last-of-type {
+    box-shadow: none;
+    flex-grow: 1;
+}
+
+
+//
+// background colors
+//
+atom-workspace {
+    .inset-panel, .focusable-panel, .tree-view, .item-views {
+        background-color: var(--ui--background--raised) !important;
+        .outline-view {
+            background-color: var(--ui--background) !important;
+        }
+    }
+    .settings-view .config-menu,
+    .status-bar,
+    atom-panel.modal .select-list ol.list-group, atom-panel.modal.select-list ol.list-group,
+    atom-panel.modal .command-palette,
+    atom-text-editor[mini],
+    .settings-view > .panels,
+    atom-text-editor .gutter,
+    atom-panel.modal:before,
+    .tool-panel, .panel, atom-panel,
+    {
+        background-color: var(--ui--background);
+    }
+}
+
+atom-text-editor {
+
+    background-color: @slate-1;
+    color: @syntax-text-color;
+
+    &.is-focused .cursor {
+      border-color: @syntax-cursor-color;
+    }
+
+    &.is-focused .selection .region {
+      background-color: @syntax-selection-color;
+    }
+
+    &.is-focused .line-number.cursor-line-no-selection,
+    &.is-focused .line.cursor-line {
+      background-color: rgba(101, 115, 126, 0.33);
+    }
+
+    .gutter {
+        background-color: @syntax-gutter-background-color;
+        color: @syntax-gutter-text-color;
+
+        .line-number.cursor-line {
+            background-color: @syntax-gutter-background-color-selected;
+            color: @syntax-gutter-text-color-selected;
+        }
+
+        .line-number.cursor-line-no-selection {
+            color: @syntax-gutter-text-color-selected;
+        }
+    }
+
+    .wrap-guide {
+        color: @syntax-wrap-guide-color;
+    }
+
+    .indent-guide {
+        color: @syntax-indent-guide-color;
+    }
+
+    .invisible-character {
+        color: @syntax-invisible-character-color;
+    }
+
+    .search-results {
+
+        .syntax--marker .region {
+            background-color: transparent;
+            border: @syntax-result-marker-color;
+        }
+
+        .syntax--marker.current-result .region {
+            border: @syntax-result-marker-color-selected;
+        }
+    }
+}
+//
+// highlight color
+//
+.settings-view .config-menu .nav > li.active > a,
+.select-list ol.list-group li.selected,
+.settings-view input[type="checkbox"]:not(:checked),
+.panel-heading,
+.btn,
+.btn.btn-default,
+.find-and-replace .btn-group-find, .find-and-replace .btn-group-replace,
+.settings-view select.form-control,
+.editor.mini,
+.input-select,
+.settings-view .sub-section .sub-section-heading,
+{
+    background-color: @slate-2 !important;
+}
+.btn,
+.btn.btn-default,
+{
+    background-image: none !important;
+}
+
+
+
+// modified files
+.list-group li:not(.list-nested-item).status-modified, .list-tree li:not(.list-nested-item).status-modified, .list-group li.list-nested-item.status-modified > .list-item, .list-tree li.list-nested-item.status-modified > .list-item {
+    color: @green !important;
+}
+// new files
+.list-group li:not(.list-nested-item).selected.status-added, .list-tree li:not(.list-nested-item).selected.status-added, .list-group li.list-nested-item.selected.status-added > .list-item, .list-tree li.list-nested-item.selected.status-added > .list-item {
+    color: @vibrant-green !important;
+}
+
+
+h3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

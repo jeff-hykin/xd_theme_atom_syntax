@@ -1,0 +1,275 @@
+@import "ui-variables";
+
+.syntax--meta.syntax--tag.syntax--sgml,
+.syntax--markup.syntax--deleted.git_gutter {
+  color: @red;
+}
+
+.syntax--meta.syntax--tag,
+.syntax--entity.syntax--name.syntax--tag,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--begin.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--tag.syntax--end.syntax--html,
+.syntax--punctuation.syntax--definition.syntax--tag,
+.syntax--support.syntax--other.syntax--variable,
+.syntax--string.syntax--other.syntax--link {
+  color: @soft-red;
+}
+
+.syntax--constant.syntax--numeric,
+.syntax--constant.syntax--language,
+.syntax--support.syntax--constant,
+.syntax--constant.syntax--character,
+.syntax--keyword.syntax--other.syntax--unit {
+  color: @orange;
+}
+
+.syntax--variable.syntax--quoted.syntax--elixir,
+.syntax--entity.syntax--other.syntax--inherited-class,
+.syntax--markup.syntax--heading,
+.syntax--markup.syntax--inserted.git_gutter {
+  color: @green;
+}
+
+.syntax--variable.syntax--constant.syntax--elixir,
+.syntax--entity.syntax--name.syntax--type,
+.syntax--entity.syntax--name.syntax--class,
+.syntax--entity.syntax--name.syntax--type.syntax--class,
+.syntax--support.syntax--type,
+.syntax--support.syntax--class,
+.syntax--meta.syntax--class,
+.syntax--support.orther.syntax--namespace.syntax--use.syntax--php,
+.syntax--meta.syntax--use.syntax--php,
+.syntax--support.syntax--other.syntax--namespace.syntax--php,
+.syntax--markup.syntax--changed.git_gutter {
+  color: #FAC863;
+}
+
+.syntax--entity.syntax--name.syntax--module.syntax--js,
+.syntax--variable.syntax--import.syntax--parameter.syntax--js,
+.syntax--variable.syntax--other.syntax--class.syntax--js {
+  color: @error-red;
+}
+
+.syntax--variable.syntax--language {
+  font-style: italic;
+  color: @error-red;
+}
+
+.syntax--entity.syntax--name.syntax--method.syntax--js {
+  color: @light-gray;
+}
+
+.syntax--meta.syntax--method.syntax--js {
+  color: #fff;
+}
+
+.syntax--markup.syntax--inserted {
+  color: @green;
+}
+
+.syntax--markup.syntax--deleted {
+  color: @red;
+}
+
+.syntax--markup.syntax--changed {
+  color: @pink;
+}
+
+
+
+* .syntax--url *, * .syntax--link *, * .syntax--uri * {
+    text-decoration: underline;
+}
+
+
+
+
+// selection color in notifications
+.message.item *::selection {
+    // FIXME: this looks ugly
+    color: @orange;
+    background-color: @solid-blue;
+}
+.syntax--support.syntax--constant.syntax--color.syntax--w3c-standard-color-name.css
+
+
+
+//
+// comments
+//
+    .syntax--comment,
+    .syntax--comment.syntax--line.syntax--double-slash,
+    .syntax--punctuation.syntax--definition.syntax--comment,
+    atom-text-editor .syntax--comment,
+    {
+        color: @gray;
+    }
+
+//
+// strings
+//
+    .syntax--string, {
+        color: @lime;
+    }
+    .syntax--punctuation.syntax--string, {
+        color: @green;
+    }
+    .syntax--punctuation.syntax--string,
+    .syntax--string.syntax--regexp {
+      color: @vibrant-green;
+    }
+    // make embedded default to uncolored
+    .syntax--embedded.syntax--line,
+    .syntax--embedded.syntax--source {
+        color: @light-gray;
+    }
+
+    .syntax--constant.syntax--character.syntax--escape,
+    {
+      color: @orange;
+    }
+
+
+//
+// atoms
+//
+    .syntax--constant.syntax--other.syntax--symbol,
+    {
+        color: @orange;
+    }
+
+//
+// variables
+//
+    .syntax--variable {
+        color: @light-gray;
+    }
+    // parameters
+    .syntax--function > .syntax--variable,
+    .syntax--variable.syntax--parameter, {
+        color: @orange;
+    }
+    .syntax--variable.syntax--other.syntax--object.syntax--property,
+    .syntax--support.syntax--type.syntax--property-name, // css properties
+    .entity.name.tag.yaml,
+    {
+        color: @dim-green;
+        text-decoration: underline;
+    }
+    // constants
+    .syntax--variable.syntax--constant {
+        color: @yellow;
+    }
+
+
+//
+// functions
+//
+    .syntax--entity.syntax--name.syntax--function,
+    .syntax--meta.syntax--function-call,
+    .syntax--support.syntax--function,
+    .syntax--keyword.syntax--other.syntax--special-method,
+    .syntax--storage.syntax--type.syntax--function.syntax--arrow, // arrow functions in JS
+    .syntax--punctuation.syntax--definition.syntax--parameters,   // function definition parameter ()'s
+    .syntax--meta.syntax--delimiter.syntax--comma,                // commas in parameters
+    {
+        color: @blue;
+    }
+
+
+//
+// operators
+//
+    .syntax--keyword.syntax--operator, {
+        color: @purple;
+    }
+
+//
+// types
+//
+    .syntax--storage.syntax--modifier,
+    .syntax--storage.syntax--type {
+        color: @pink;
+    }
+
+//
+// punctuation
+//
+    // default/unknown
+    .syntax--punctuation, {
+        color: @cyan;
+    }
+    // whitespace
+    .invisible-character {
+        color: @light-gray;
+        opacity: 0.5;
+    }
+    // dim invisibles
+    .syntax--punctuation.syntax--terminator.syntax--statement,
+    .syntax--punctuation.syntax--section.syntax--embedded,
+    .syntax--punctuation.syntax--terminator,
+    {
+        color: @gray;
+    }
+
+//
+// keywords
+//
+    .syntax--keyword,
+    .syntax--constant.syntax--other.syntax--color,
+    {
+        color: @cyan;
+    }
+
+
+
+
+
+//
+// CSS
+//
+    .syntax--support.syntax--constant.syntax--property-value, // css keywords
+    {
+        color: @cyan;
+    }
+    .syntax--support.syntax--constant.syntax--color,
+    .syntax--support.syntax--constant.syntax--color.syntax--w3c-standard-color-name,
+    {
+        color: @green;
+    }
+    .syntax--entity.syntax--other.syntax--attribute-name,
+    {
+        color: @blue;
+    }
+    .syntax--constant.syntax--character.syntax--escape.syntax--css,
+    .syntax--constant.syntax--character.syntax--escape.syntax--scss, {
+        color: @orange;
+    }
+    .syntax--entity.syntax--name.syntax--tag {
+        color: @yellow;
+    }
+    .syntax--keyword.syntax--other.syntax--unit {
+        color: @bananna-yellow;
+    }
+    .syntax--punctuation.syntax--definition.syntax--variable,
+    .syntax--variable.syntax--other.syntax--less,
+    .syntax--variable.syntax--css,
+    {
+        color: @light-gray;
+        text-decoration: underline;
+    }
+
+
+
+//
+// Ruby
+//
+    // special globals
+    .syntax--variable.syntax--other.syntax--readwrite.syntax--global
+    {
+        color: @bananna-yellow;
+    }
+    .syntax--source.syntax--ruby .syntax--string.syntax--unquoted.syntax--heredoc.syntax--interpolated .syntax--source.syntax--c .syntax--support.syntax--storage.syntax--type {
+        color: @lime;
+    }

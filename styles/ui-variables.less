@@ -1,0 +1,191 @@
+
+
+
+
+//
+//
+// mine
+//
+//
+
+@very-light-gray: #c5c8c6;
+@dark-gray: #282a2e;
+@very-dark-gray: #1d1f21;
+
+@black:            #000000;
+@white:            #ffffff;
+@light-gray:       #c7cbcd;
+@gray:             #546e7a;
+@rust:             #c17e70;
+@orange:           #f78c6c;
+@yellow:           #fec355;
+@bananna-yellow:   #ddd790;
+@lime:             #c3e88d;
+@green:            #4ec9b0;
+@bold-green:       #4ec9b0d0;
+@vibrant-green:    #04d895;
+@dim-green:        #80cbc4;
+@light-slate:      #64bac5;
+@dark-slate:       #3f848d;
+@cyan:             #89ddff;
+@blue:             #82aaff;
+@electric-blue:    #00aeff;
+@purple:           #c792ea;
+@pink:             #e57eb3;
+@red:              #ff5572;
+@soft-red:         #f07178;
+
+// UI colors
+:root {
+    --ui--accent: #2670a1;
+    --ui--background: #242938;
+    --ui--background--raised: var(--ui--background);
+    --ui-tab-size: 3.9rem;
+    --shadow-2: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --size-of-underline: 5px;
+}
+
+@alt-tab-color: #2a555a;
+@slate-1:       #242938;
+@slate-2:       #2c3b4f;
+@slate-3:       #324962;
+@slate-4:       #414863;
+@alt-hover-background:        #34464c;
+@ui-text-color:               #5e718a;
+@editor-text-color:           #bfc9d5;
+@off-white:                   #eeffff;
+@solid-blue:                  #2670a1;
+@syntax-selection-color:      @solid-blue; // old #83b2e1
+@navy-slate:                  #184967;
+@cursor-color:                #ff9900;
+@error-red:                   #ef5350;
+@find-me:                     #e100ffc0;
+
+
+// General colors
+@syntax-background-color: @slate-1;
+@syntax-text-color: @very-light-gray;
+@syntax-cursor-color: white;
+
+// Guide colors
+@syntax-wrap-guide-color: @dark-gray;
+@syntax-indent-guide-color: @gray;
+@syntax-invisible-character-color: @gray;
+
+// For find and replace markers
+@syntax-result-marker-color: @light-gray;
+@syntax-result-marker-color-selected: white;
+
+// Gutter colors
+@syntax-gutter-text-color: @very-light-gray;
+@syntax-gutter-text-color-selected: @syntax-gutter-text-color;
+@syntax-gutter-background-color: @dark-gray;
+@syntax-gutter-background-color-selected: @gray;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @blue;
+@syntax-color-added: @vibrant-green;
+@syntax-color-modified: @yellow;
+@syntax-color-removed: @red;
+
+
+//
+// shared/external colors
+//
+
+@ui-site-color-1: @green;
+@ui-site-color-2: @blue;
+@ui-site-color-3: @orange;
+@ui-site-color-4: @purple;
+@ui-site-color-5: @yellow;
+
+
+// Colors
+
+
+@text-color: @light-gray;
+@text-color-subtle: @gray;
+@text-color-highlight: #fff;
+@text-color-selected: @text-color-highlight;
+
+@text-color-info: @blue;
+@text-color-success: @green;
+@text-color-warning: @yellow;
+@text-color-error: @error-red;
+
+@text-color-ignored: @text-color-subtle;
+@text-color-added: @text-color-success;
+@text-color-renamed: @text-color-info;
+@text-color-modified: @text-color-warning;
+@text-color-removed: @text-color-error;
+
+@background-color-info: @electric-blue;
+@background-color-success: @vibrant-green;
+@background-color-warning: @orange;
+@background-color-error: @soft-red;
+@background-color-highlight: rgba(255, 255, 255, 0.07);
+@background-color-selected: @syntax-selection-color;
+
+@app-background-color: @slate-1;
+
+@base-background-color: lighten(@tool-panel-background-color, 5%);
+@base-border-color: rgba(0, 0, 0, 0.5);
+
+@pane-item-background-color: @base-background-color;
+@pane-item-border-color: rgba(0, 0, 0, 0.5);
+
+@input-background-color: @slate-1;
+@input-border-color: @base-border-color;
+
+@tool-panel-background-color: @slate-1;
+@tool-panel-border-color: @base-border-color;
+
+@inset-panel-background-color: @slate-1;
+@inset-panel-border-color: @base-border-color;
+
+@panel-heading-background-color: @slate-2;
+@panel-heading-border-color: fadein(@base-border-color, 10%);
+
+@overlay-background-color: @slate-1;
+@overlay-border-color: @background-color-highlight;
+
+@button-background-color: @slate-2;
+@button-background-color-hover: lighten(@button-background-color, 5%);
+@button-background-color-selected: @slate-4;
+@button-border-color: @base-border-color;
+
+@tab-bar-background-color: @navy-slate;
+@tab-bar-border-color: darken(@tab-background-color-active, 10%);
+@tab-background-color: @navy-slate;
+@tab-background-color-active: @navy-slate;
+@tab-border-color: white;
+
+@tree-view-background-color: @syntax-background-color;
+@tree-view-border-color: @tool-panel-border-color;
+
+@scrollbar-background-color: #222425; // Needs to be opaque -> atom/atom/issues/4578
+@scrollbar-color: @slate-3;
+
+
+
+
+// Sizes
+
+@font-size: 11px;
+@input-font-size: 14px;
+
+@disclosure-arrow-size: 12px;
+
+@component-padding: 10px;
+@component-icon-padding: 5px;
+@component-icon-size: 16px;
+@component-line-height: 25px;
+@component-border-radius: 2px;
+
+@tab-height: 26px;
+
+
+
+// Other
+
+@font-family: system-ui;
